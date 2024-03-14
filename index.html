@@ -4,29 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Probetiq - Bet Prediction App</title>
-    <link rel="stylesheet" href="style.css"> <!-- Make sure to create a 
-style.css file for styling -->
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 15px;
+            padding: 50px;
+            margin-top: 50px;
+        }
+        .btn-primary {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e63946;
+            border-color: #e63946;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Probetiq!</h1>
-        <p>Your ultimate tool for football bet predictions.</p>
-    </header>
 
-    <section>
-        <h2>Login to start predicting</h2>
-        <div id="googleSignInButton">Sign in with Google</div> <!-- 
-Placeholder for Google sign-in button -->
-        <!-- Ensure you include the Google Sign-in JavaScript SDK and 
-initialize it here -->
-    </section>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to <span style="color: #ff6b6b;">Probetiq!</span></h1>
+        <p class="lead">Your ultimate tool for football bet predictions.</p>
+        <hr class="my-4">
+        <p>Login to start predicting</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button" id="googleSignInButton">Sign in with Google</a>
+    </div>
+</div>
 
-    <footer>
-        <p><a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
+<footer class="footer">
+    <div class="container text-center">
+        <span class="text-muted"><a href="privacy-policy.html">Privacy Policy</a></span>
+    </div>
+</footer>
 
-    <script src="script.js"></script> <!-- Optional JavaScript file for 
-additional functionality -->
+<!-- Include Bootstrap JS and its dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
