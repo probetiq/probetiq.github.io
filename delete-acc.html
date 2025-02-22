@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function deleteUser() {
+            const userID = document.getElementById("userID").value.trim();
+            if (!userID) {
+                alert("Please enter a valid User ID.");
+                return;
+            }
+            
+            if (confirm(`Are you sure you want to delete User ID: ${userID}? This action cannot be undone.`)) {
+                fetch(`https://be-probetiq.onrender.com/v1/users/${userID}`, {
+                    method: 'DELETE',
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("User account deleted successfully.");
+                    } else {
+                        alert("Error deleting user account.");
+                    }
+                })
+                .catch(error => {
+                    alert("Network error: " + error.message);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Delete Your Account</h2>
+    <p>Enter your User ID to delete your account. This action is irreversible.</p>
+    <input type="text" id="userID" placeholder="Enter User ID" required>
+    <br>
+    <button onclick="deleteUser()">Delete Account</button>
+</body>
+</html>
